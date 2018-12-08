@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:tem="http://tempuri.org/">
+    <soapenv:Header/>
+        <soapenv:Body>
+            <tem:SendService>
+                <!--Optional:-->
+                <tem:strMobile>18861827985</tem:strMobile>
+                <!--Optional:-->
+                <tem:strMessage>这是一个测试</tem:strMessage>
+            </tem:SendService>
+        </soapenv:Body>
+</soapenv:Envelope>

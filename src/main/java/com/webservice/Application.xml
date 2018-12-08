@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="policeInter">
+        <property name="url" value="http://sqcy.shjgj-xxzx.org/MsgHubLocal/Hub.asmx?wsdl"/>
+        <property name="targetNamespace" value="http://tempuri.org/"/>
+        <property name="method" value="SendService"/>
+        <property name="paramName" value="strMobile,strMessage"/>
+        <property name="paramValue" value="iphone,message"/>
+        <property name="soapAction" value="http://tempuri.org/SendService"/>
+        <property name="flow" value="executeFlow"/>
+        <property name="bean" value="policeBean"/>
+    </bean>
+
+    <bean id="resultBean">
+        <property name="param1" value="bean1"/>
+    </bean>
+
+    <bean id="policeBean">
+        <property name="param2" value="bean2"/>
+        <property name="param3@param1" value="bean1"/>
+    </bean>
+
+    <bean id="executeFlow">
+        <property name="HttpToWsAgreement" value="agreement"/>
+        <property name="WsCallInterface" value="callInterface"/>
+        <property name="WsToHttpAgreement" value="agreement"/>
+        <property name="PollingJob" value="polling"/>
+        <property name="PollingJob" value="pollingJob"/>
+        <property name="UnifiedBean" value="getBean"/>
+        <property name="XmlDataProcess" value="dataProcess"/>
+        <property name="DataSendOut" value="sendData"/>
+    </bean>
+</beans>
